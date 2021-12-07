@@ -94,7 +94,7 @@ Script is started using **main.py** module but it requires some parameters depen
 ```-sshp``` Port for SSH connection (default=22).<br>
 ```-cp``` Connection port for MQTT client (default=1883).<br>
 ```-tls``` Type of tls to use (cert or dont include).<br>
-```-mqttauth``` MQTT username and password usage (true or false, default=false).<br>
+```-mqttauth``` MQTT username and password usage (true or false, default=false).<br><br>
 
 **Examples**<br>
 
