@@ -89,7 +89,7 @@ Script is started using **main.py** module but it requires some parameters depen
 ```-a``` Device ip address.<br>
 ```-u``` Username for SSH connection athentification..<br>
 ```-p``` Password for SSH connection authentification.<br>
-```-tel``` Phone number to which you want to get SMS notification if test failed.<br>
+```-tel``` Phone number to which you want to get SMS notification if test failed.<br><br>
 + Optional parameters<br>
 ```-sshp``` Port for SSH connection (default=22).<br>
 ```-cp``` Connection port for MQTT client (default=1883).<br>
