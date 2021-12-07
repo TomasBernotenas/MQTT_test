@@ -1,0 +1,151 @@
+{ 
+    "devices":[
+        {
+            "device":"rutx11",
+            "topics":[
+                    {
+                        "topic":"temperature",
+                        "config_command":"gsmctl -c"
+                    },
+                    {
+                        "topic":"operator",
+                        "config_command":"gsmctl -o"
+                    },
+                    {
+                        "topic":"signal",
+                        "config_command":"gsmctl -q"
+                    },
+                    {
+                        "topic":"network",
+                        "config_command":"gsmctl -g"
+                    },
+                    {
+                        "topic":"connection",
+                        "config_command":"gsmctl -t"
+                    },
+                    {
+                        "topic":"wan",
+                        "config_command":". /lib/functions/network.sh; network_find_wan NET_IF; network_get_ipaddr NET_ADDR ${NET_IF} ; echo ${NET_ADDR}"
+                    },
+                    {
+                        "topic":"uptime",
+                        "config_command":"ubus -S call system info"
+                    },
+                    {
+                        "topic":"name",
+                        "config_command":"uci get system.system.device_code"
+                    },
+                    {
+                        "topic":"pin3",
+                        "config_command":"uci get ioman.din1.value"
+                    },
+                    {
+                        "topic":"pin4",
+                        "config_command":"uci get ioman.dout1.value"
+                    }  
+                ]
+        },
+        {
+            "device":"rut955",
+            "topics":[
+                    {
+                        "topic":"temperature",
+                        "config_command":"gsmctl -c"
+                    },
+                    {
+                        "topic":"operator",
+                        "config_command":"gsmctl -o"
+                    },
+                    {
+                        "topic":"signal",
+                        "config_command":"gsmctl -q"
+                    },
+                    {
+                        "topic":"network",
+                        "config_command":"gsmctl -g"
+                    },
+                    {
+                        "topic":"connection",
+                        "config_command":"gsmctl -t"
+                    },
+                    {
+                        "topic":"wan",
+                        "config_command":". /lib/functions/network.sh; network_find_wan NET_IF; network_get_ipaddr NET_ADDR ${NET_IF} ; echo ${NET_ADDR}"
+                    },
+                    {
+                        "topic":"uptime",
+                        "config_command":"ubus -S call system info"
+                    },
+                    {
+                        "topic":"name",
+                        "config_command":"uci get system.system.device_code"
+                    },
+                    {
+                        "topic":"digital1",
+                        "config_command":"uci get ioman.din2.invert_input"
+                    },
+                    {
+                        "topic":"digital2",
+                        "config_command":"uci get ioman.dout2.value"
+                    },
+                    {
+                        "topic":"analog",
+                        "config_command":"ubus -S call ioman.adc.adc0 status"
+                    },
+                    {
+                        "topic":"pin3",
+                        "config_command":"uci get ioman.din1.invert_input"
+                    },
+                    {
+                        "topic":"pin4",
+                        "config_command":"uci get ioman.dout1.value"
+                    }  
+                ]
+            },
+            {
+                "device":"rut950",
+                "topics":[
+                    {
+                        "topic":"temperature",
+                        "config_command":"gsmctl -c"
+                    },
+                    {
+                        "topic":"operator",
+                        "config_command":"gsmctl -o"
+                    },
+                    {
+                        "topic":"signal",
+                        "config_command":"gsmctl -q"
+                    },
+                    {
+                        "topic":"network",
+                        "config_command":"gsmctl -g"
+                    },
+                    {
+                        "topic":"connection",
+                        "config_command":"gsmctl -t"
+                    },
+                    {
+                        "topic":"wan",
+                        "config_command":". /lib/functions/network.sh; network_find_wan NET_IF; network_get_ipaddr NET_ADDR ${NET_IF} ; echo ${NET_ADDR}"
+                    },
+                    {
+                        "topic":"uptime",
+                        "config_command":"ubus -S call system info"
+                    },
+                    {
+                        "topic":"name",
+                        "config_command":"uci get system.system.device_code"
+                    },
+                    {
+                        "topic":"pin3",
+                        "config_command":"uci get ioman.din1.invert_input"
+                    },
+                    {
+                        "topic":"pin4",
+                        "config_command":"uci get ioman.dout1.value"
+                    }    
+                    ]
+                }
+    ]
+}
