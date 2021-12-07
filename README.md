@@ -96,7 +96,7 @@ Script is started using **main.py** module but it requires some parameters depen
 ```-tls``` Type of tls to use (cert or dont include).<br>
 ```-mqttauth``` MQTT username and password usage (true or false, default=false).<br>
 
-**Example**<br>
+**Examples**<br>
 
 * Example for base MQTT setup<br>
 ```python3 main.py -d rutx11 -a 192.168.1.1 -u root -p admin01 -tel +37000000000```<br><br>
