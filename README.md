@@ -11,6 +11,9 @@ used to generate certificates ```$ pip install pyOpenSSL```<br>
 **paho-mqtt library:**<br>
 used to communicate with MQTT ```$ pip install paho-mqtt```<br>
 <br>
+**scp library:**<br>
+used to transfer files to the device ```$ pip install scp```<br>
+<br>
 ## Configuration file usage
 Configuration file is used to define devices with their MQTT topics and commands for router info retrieval.<br>
 <br>
