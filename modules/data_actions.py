@@ -73,19 +73,19 @@ class data_actions:
 
                     if line["topic"]=="uptime":
 
-                        if s>8:
+                        if s>2:
 
-                            self.compare_data_result_action(self,line,repNumber)
+                            self.compare_data_result_action(line,repNumber)
                         break
 
                     if line["topic"]=="wan":
                         
-                        self.compare_data_result_action(self,line,repNumber)
+                        self.compare_data_result_action(line,repNumber)
                         break
                       
                     elif -10>s>10:
 
-                        self.compare_data_result_action(self,line,repNumber)
+                        self.compare_data_result_action(line,repNumber)
 
             if self.__failed>0:
                 Terminal.Failed+=1
