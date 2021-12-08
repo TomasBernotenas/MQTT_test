@@ -73,7 +73,7 @@ class data_actions:
 
                     if line["topic"]=="uptime":
 
-                        if s>2:
+                        if s>8:
 
                             self.compare_data_result_action(line,repNumber)
                         break
