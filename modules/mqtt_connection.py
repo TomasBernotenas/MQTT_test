@@ -35,7 +35,14 @@ class mqtt_connection:
         
 
     def on_message(self ,client, userdata, message):
-        self.__Outstring.append(str(message.payload.decode("utf-8"))) 
+        try:
+            if str(message.payload.decode("utf-8")) != '':
+                self.__Outstring.append(str(message.payload.decode("utf-8"))) 
+            else:
+                raise Exception("Returned MQTT value is empty in topic: {0}".format(message.topic))
+        except Exception as e:
+            print(e)
+            exit()
 
         
     def mqtt_connect(self,client):
@@ -83,7 +90,7 @@ class mqtt_connection:
             if self.__Outstring== '':
                 self.mqtt_command(topics)
             
-            
+            print(self.__Outstring)
             return self.__Outstring
         except Exception as e:
             print(e)
@@ -97,9 +104,9 @@ class mqtt_connection:
             for line in topics:
 
                     if line=="id":
-                        self.__client.subscribe("router/"+line)
+                        self.__client.subscribe("router/{0}".format(line))
                     else:
-                        self.__client.subscribe("router/"+self.__id+"/"+line["topic"])
+                        self.__client.subscribe("router/{0}/{1}".format(self.__id, line["topic"]))
         except:
             print("Failed to subscribe to topic")
             exit()

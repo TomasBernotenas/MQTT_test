@@ -57,8 +57,8 @@ class router_acions:
 
     def certificate_generation(self):
 
-        keyFile="certificates/"+str(self.__args.a)+".key"
-        certFile="certificates/"+str(self.__args.a)+".cert"
+        keyFile="certificates/{0}.key".format(str(self.__args.a))
+        certFile="certificates/{0}.cert".format(str(self.__args.a))
 
         if not os.path.isfile('$(pwd)/'+keyFile) and not os.path.isfile('$(pwd)/'+certFile):
 

@@ -31,7 +31,7 @@ class configuration:
 
             self.__shell.send_command("uci set mosquitto.mqtt.enabled=1")
             self.__shell.send_command("uci set mosquitto.mqtt.anonymous_access=1")
-            self.__shell.send_command("uci set mosquitto.mqtt.local_port="+str(self.__args.cp))
+            self.__shell.send_command("uci set mosquitto.mqtt.local_port={0}".format(str(self.__args.cp)))
             self.__shell.send_command("uci set mosquitto.mqtt.use_tls_ssl=0")
 
             if self.__args.tls=="cert":
@@ -42,8 +42,8 @@ class configuration:
 
                 self.__shell.send_command("uci set mosquitto.mqtt.tls_type=cert")
                 self.__shell.send_command("uci set mosquitto.mqtt.ca_file=/etc/certificates/ca.cert") 
-                self.__shell.send_command("uci set mosquitto.mqtt.cert_file=/etc/certificates/"+str(self.__args.a)+".cert") 
-                self.__shell.send_command("uci set mosquitto.mqtt.key_file=/etc/certificates/"+str(self.__args.a)+".key")
+                self.__shell.send_command("uci set mosquitto.mqtt.cert_file=/etc/certificates/{0}.cert".format(str(self.__args.a))) 
+                self.__shell.send_command("uci set mosquitto.mqtt.key_file=/etc/certificates/{0}.key".format(str(self.__args.a)))
                 self.__shell.send_command("uci set mosquitto.mqtt.tls_version=all")
 
             if self.__args.mqttauth.lower()=="true":
@@ -70,8 +70,8 @@ class configuration:
             print("Configuring MQTT broker...                            "+self.back)
 
             self.__shell.send_command("uci set mqtt_pub.mqtt_pub.enabled=1")
-            self.__shell.send_command("uci set mqtt_pub.mqtt_pub.remote_addr="+self.__args.a)
-            self.__shell.send_command("uci set mqtt_pub.mqtt_pub.remote_port="+str(self.__args.cp))
+            self.__shell.send_command("uci set mqtt_pub.mqtt_pub.remote_addr={0}".format(self.__args.a))
+            self.__shell.send_command("uci set mqtt_pub.mqtt_pub.remote_port={0}".format(str(self.__args.cp)))
             self.__shell.send_command("uci set mqtt_pub.mqtt_pub.tls=0")
 
             if self.__args.tls=="cert":
@@ -82,8 +82,8 @@ class configuration:
 
                 self.__shell.send_command("uci set mqtt_pub.mqtt_pub.tls_type=cert")
                 self.__shell.send_command("uci set mqtt_pub.mqtt_pub.cafile=/etc/certificates/ca.cert") 
-                self.__shell.send_command("uci set mqtt_pub.mqtt_pub.certfile=/etc/certificates/"+str(self.__args.a)+".cert") 
-                self.__shell.send_command("uci set mqtt_pub.mqtt_pub.keyfile=/etc/certificates/"+str(self.__args.a)+".key")
+                self.__shell.send_command("uci set mqtt_pub.mqtt_pub.certfile=/etc/certificates/{0}.cert".format(str(self.__args.a))) 
+                self.__shell.send_command("uci set mqtt_pub.mqtt_pub.keyfile=/etc/certificates/{0}.key".format(str(self.__args.a)))
 
             if self.__args.mqttauth.lower()=="true":
 

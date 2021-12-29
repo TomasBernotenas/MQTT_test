@@ -66,8 +66,7 @@ class data_actions:
                             s=float(line["Router info"])-float(line["MQTT info"])
 
                     else:
-
-                        self.send_message(self.__args.tel,(" Device: "+self.__args.d.upper()+" Empty result in report: "+str(repNumber)))
+                        self.send_message(self.__args.tel,(" Device: {0} Empty result in report: {1}".format(self.__args.d.upper(), str(repNumber))))
                         self.set_result(line)
                         break
 
@@ -98,13 +97,11 @@ class data_actions:
             exit()
 
     def compare_data_result_action(self,line,repNumber):
-
-        self.send_message(self.__args.tel,(" Device: "+self.__args.d.upper()+" Topic: "+line["topic"]+" dosent match"+" report number: "+str(repNumber)))
+        self.send_message(self.__args.tel,(" Device: {0} Topic: {1} dosent match report number: {2}".format(self.__args.d.upper(), line["topic"], str(repNumber))))
         self.set_result(line)
 
     def send_message(self,phone,message):
-
-        self.__ssh_client.shell.send_command("gsmctl -S -s "+"\""+ phone +  message +"\"")
+        self.__ssh_client.shell.send_command("gsmctl -S -s "+"\"{0} {1}\"".format(phone, message))
 
     def set_result(self,line):
 

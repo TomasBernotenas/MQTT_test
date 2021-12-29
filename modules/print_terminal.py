@@ -22,8 +22,7 @@ class print_terminal:
             print("                                                        \n")
             for line in Outsrting:
                 print(line)
-
-            print(CGREEN+"Passed: "+CEND + str(self.Passed) + CRED +"  Failed: " + CEND + str(self.Failed)+"  Total: " +str(self.Passed+self.Failed)+"\r")
+            print("{0}Passed: {1} {2} {3} Failed: {4} {5} Total: {6} \r".format(CGREEN,CEND,str(self.Passed),CRED,CEND,str(self.Failed),str(self.Passed+self.Failed)))
             print(back*(len(Outsrting)+4))
 
         except Exception as e:
