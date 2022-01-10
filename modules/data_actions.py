@@ -62,8 +62,10 @@ class data_actions:
                 
                 if line["MQTT info"] != line["Router info"]:
                     if line["Router info"]!=" " and line["MQTT info"]!=" ":
-
+                        try:
                             s=float(line["Router info"])-float(line["MQTT info"])
+                        except:
+                            s=10
 
                     else:
                         self.send_message(self.__args.tel,(" Device: {0} Empty result in report: {1}".format(self.__args.d.upper(), str(repNumber))))
