@@ -90,7 +90,6 @@ class mqtt_connection:
             if self.__Outstring== '':
                 self.mqtt_command(topics)
             
-            print(self.__Outstring)
             return self.__Outstring
         except Exception as e:
             print(e)
