@@ -22,7 +22,7 @@ class configuration:
             self.__shell.send_command("/etc/init.d/vuci restart\n") 
         
 
-    def mqtt_configuration(self):
+    def mqtt_broker_configuration(self):
 
        
         try:
@@ -63,7 +63,7 @@ class configuration:
             print(e)
             exit()
 
-    def mqtt_broker_configuration(self):
+    def mqtt_publisher_configuration(self):
 
         try:
 

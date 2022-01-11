@@ -46,8 +46,8 @@ class router_acions:
                 
                 self.shell.scp_upload("./certificates","/etc")
                 
-            conf.mqtt_configuration()
             conf.mqtt_broker_configuration()
+            conf.mqtt_publisher_configuration()
 
             del conf
 
