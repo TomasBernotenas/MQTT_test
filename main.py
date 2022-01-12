@@ -2,11 +2,14 @@ from argparse import ArgumentParser
 from signal import SIGINT, SIGTERM,signal
 from modules.data_actions import data_actions
 
+#Termination signal handler
 
 def signal_handler(sig, frame):
     
     print('\n\n\n\n\n\nProcess terminated')
     exit()
+
+#Main script function
 
 def main(args):
 
@@ -15,6 +18,7 @@ def main(args):
         data=data_actions(args)
         data.gather_data()
 
+#Argument parser for the script
 
 def argument_parser():
 

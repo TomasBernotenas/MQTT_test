@@ -2,6 +2,8 @@ from json import load,loads
 
 class read_json:
 
+    #Reads .json file
+
     def read_config(deviceName):
         try:
 
@@ -25,6 +27,8 @@ class read_json:
         except TypeError:
             print("There is no such device in configuration file")
             exit()
+
+    #Proccess ubus info
 
     def ubus_load(self,Outsring):
 

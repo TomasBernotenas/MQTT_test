@@ -23,6 +23,8 @@ class data_actions:
             
         self.__topics=topics
         self.__args=args
+
+    #Gathers data from other modules
         
     def gather_data(self):
         try:
@@ -54,6 +56,7 @@ class data_actions:
             print(e)
             exit()
 
+    #compares mqtt and router info
 
     def compare_data(self,Terminal,repNumber):
         try:
@@ -98,12 +101,18 @@ class data_actions:
             print(e)
             exit()
 
+    #Actions after info dosent match
+
     def compare_data_result_action(self,line,repNumber):
         self.send_message(self.__args.tel,(" Device: {0} Topic: {1} dosent match report number: {2}".format(self.__args.d.upper(), line["topic"], str(repNumber))))
         self.set_result(line)
 
+    #Sends message
+
     def send_message(self,phone,message):
         self.__ssh_client.shell.send_command("gsmctl -S -s "+"\"{0} {1}\"".format(phone, message))
+
+    #Sets result in the info array
 
     def set_result(self,line):
 

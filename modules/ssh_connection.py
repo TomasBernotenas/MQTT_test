@@ -12,6 +12,8 @@ class ssh_connection:
 
     def __del__(self):
         self.ssh_disconnect()
+
+    #ssh connection
     
     def ssh_connect(self,args):
         try:
@@ -28,12 +30,15 @@ class ssh_connection:
             print("Failed to connect to SSH client")
             exit()
 
+    #Upload file
+
     def scp_upload(self, filePath, remotePath):
 
         with SCPClient(self.__client_pre.get_transport())as scp:
             scp.put(filePath,remotePath,True)
             scp.close()
     
+    #Send command to router
 
     def send_command(self,command):
         try:
@@ -48,6 +53,8 @@ class ssh_connection:
             print(e)
             exit()
 
+    #Read output of router
+
     def read_output(self):
         try:
 
@@ -60,6 +67,8 @@ class ssh_connection:
         except Exception as e:
             print(e)
             exit()
+
+    #Close ssh connection
 
     def ssh_disconnect(self):
 

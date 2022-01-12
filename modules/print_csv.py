@@ -6,6 +6,8 @@ class print_csv:
 
         self.counter=1
         self.result=None
+
+    #Prints results to csv
    
     def print_to_csv(self,topics,deviceName,dateTime):
         try:    

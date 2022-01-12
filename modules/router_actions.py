@@ -26,6 +26,7 @@ class router_acions:
     def __del__(self):
         del self.shell
         
+    #mqtt configuration file setup
 
     def mqtt_conf(self):
         
@@ -55,6 +56,8 @@ class router_acions:
             print(e)
             exit()
 
+    #Generate certificates
+
     def certificate_generation(self):
 
         keyFile="certificates/{0}.key".format(str(self.__args.a))
@@ -73,7 +76,8 @@ class router_acions:
             self.shell.scp_upload("./certificates","/etc")
             del certificates
             
-    
+    #Get router information
+
     def router_info(self):
         
         self.__list=[]
@@ -85,6 +89,8 @@ class router_acions:
             self.__list.append(temp)
 
         return self.__list
+
+    #Check if result is json
 
     def check_if_ubus(self,Outsring):
 

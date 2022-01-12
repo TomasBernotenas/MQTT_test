@@ -7,6 +7,8 @@ class print_terminal:
         self.Passed=0
         self.Failed=0
         self.Total=0
+
+    # prints information to the terminal
     
     def term_print(self,ssh_client):
 

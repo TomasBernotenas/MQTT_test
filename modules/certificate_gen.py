@@ -12,6 +12,8 @@ class certificate_gen:
         self.key=None
         self.__args=args
 
+    #Generates key
+
     def createKeyPair(self):
 
         try:
@@ -23,6 +25,8 @@ class certificate_gen:
         except:
             print("Failed to generate key")
             exit()
+
+    #Certificate generation
 
     def cert_gen(self,
         serialNumber=0,
@@ -56,6 +60,8 @@ class certificate_gen:
         except:
             print("Failed to create certificate")
             exit()
+
+    #Certificate signing request generation
 
     def request(self,
         emailAddress="Email",

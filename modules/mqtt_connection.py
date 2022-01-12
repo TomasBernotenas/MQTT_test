@@ -33,6 +33,7 @@ class mqtt_connection:
     def __del__(self):
         self.mqtt_disconnect()
         
+    #On event adds payload to array
 
     def on_message(self ,client, userdata, message):
         try:
@@ -44,6 +45,7 @@ class mqtt_connection:
             print(e)
             exit()
 
+    #client connect to mqtt
         
     def mqtt_connect(self,client):
         try:
@@ -54,6 +56,7 @@ class mqtt_connection:
             print("Failed to connect to MQTT")
             exit()
 
+    #disconnect client
 
     def mqtt_disconnect(self):
         try:
@@ -65,6 +68,8 @@ class mqtt_connection:
 
         except Exception as e:
             print(e)
+
+    #main loop 
 
     def mqtt_command(self,topics):
 
@@ -95,6 +100,7 @@ class mqtt_connection:
             print(e)
             exit()
 
+    #Subscirbe to topic
 
     def subscribe(self,topics):
 
@@ -109,6 +115,8 @@ class mqtt_connection:
         except:
             print("Failed to subscribe to topic")
             exit()
+
+    #Publish to topic
 
     def publish(self,topics):
 

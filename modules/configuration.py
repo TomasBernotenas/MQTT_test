@@ -9,6 +9,8 @@ class configuration:
         self.__shell=shell
         self.__args=args
 
+    #Install mqtt package with opkg
+
     def mqtt_package_install(self):
 
             print("Getting MQTT ready...                   "+self.back)
@@ -21,6 +23,7 @@ class configuration:
             self.__shell.send_command("/etc/init.d/mqtt_pub restart\n") 
             self.__shell.send_command("/etc/init.d/vuci restart\n") 
         
+    #Setup mqtt broker
 
     def mqtt_broker_configuration(self):
 
@@ -62,6 +65,8 @@ class configuration:
         except Exception as e:
             print(e)
             exit()
+
+    #Setup mqtt publisher
 
     def mqtt_publisher_configuration(self):
 
